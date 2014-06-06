@@ -11,5 +11,43 @@
 
 .link a{
     text-decoration: none;
-    color: black;
+	color: white;
+	font-size: 200%;
+}
+
+.droppable.br{
+	text-align: center;
+	color: white;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 24;
+	background-image: url("../img/boston.png");
+}
+
+.me {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+}
+
+.dasme {
+	position: absolute;
+	top: 50px;
+	right: 200px;
+	/* Safari */
+-webkit-transform: rotate(30deg);
+
+/* Firefox */
+-moz-transform: rotate(30deg);
+
+/* IE */
+-ms-transform: rotate(30deg);
+
+/* Opera */
+-o-transform: rotate(30deg);
+
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }

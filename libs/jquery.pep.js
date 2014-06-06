@@ -117,7 +117,6 @@
     this.init();
     return this;
   }
-
   //  init();
   //    initialization logic
   //    you already have access to the DOM el and the options via the instance,
@@ -203,10 +202,10 @@
                       this.positionParent();
                       this.placeObject();
                     }
-
+										
                     // log it
                     this.log({ type: 'event', event: ev.type });
-
+										  
                     // hardware accelerate, if necessary.
                     if ( this.options.hardwareAccelerate && !this.hardwareAccelerated ) {
                       this.hardwareAccelerate();
@@ -218,7 +217,11 @@
                     if ( shouldContinue === false )
                       return;
 
-
+					$('.constrain-to-window').mouseup(function(){
+					  window.website = $(this).attr('id');
+					  //alert('ID is: '+ website);
+					});
+					
                     // cancel the rest timeout
                     clearTimeout( this.restTimeout );
 
@@ -392,14 +395,13 @@
 
             // make object inactive, so watchMoveLoop returns
             this.active = false;
-
             // remove our start class
             this.$el.removeClass('pep-start')
                     .addClass('pep-ease');
 
             // Calculate our drop regions
             if ( this.options.droppable ) {
-              this.calculateActiveDropRegions();
+              this.calculateActiveDropRegions2();
             }
 
             // fire user's stop event.
@@ -868,6 +870,23 @@
       if ( self.isOverlapping($el, self.$el) ){
         $el.addClass(self.options.droppableActiveClass);
         self.activeDropRegions.push($el);
+      } else {
+        $el.removeClass(self.options.droppableActiveClass);
+      }
+    });
+
+  };
+  
+  Pep.prototype.calculateActiveDropRegions2 = function() {
+    var self = this;
+    this.activeDropRegions.length = 0;
+
+    $.each( $(this.options.droppable), function(idx, el){
+      var $el = $(el);
+      if ( self.isOverlapping($el, self.$el) ){
+        $el.addClass(self.options.droppableActiveClass);
+        self.activeDropRegions.push($el);
+        window.location = "http://www.asaphyuan.com/" + website;
       } else {
         $el.removeClass(self.options.droppableActiveClass);
       }
