@@ -1,0 +1,15 @@
+.constrain-to-window{
+	text-align: center;
+	display: table;
+	overflow: hidden;
+}
+
+.link{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.link a{
+    text-decoration: none;
+    color: black;
+}

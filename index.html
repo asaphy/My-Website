@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jquery.pep base demo</title>
+
+    <!-- Load local jQuery.  -->
+    <script src="libs/jquery/jquery.js"></script>
+    <script src="libs/modernizr.min.js"></script>
+
+    <!-- Load local lib and tests. -->
+    <script src="libs/jquery.pep.js"></script>
+	<link rel="stylesheet" type="text/css" href="libs/styles.css">
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+		$('.constrain-to-window').pep({
+		  droppable: ".droppable",
+          overlapFunction: false,
+          useCSSTranslation: false,
+          drag: function(ev, obj){        
+            console.log( obj.activeDropRegions);
+          }
+		})
+/*
+		$('.pep5').click(function(){
+			document.location.href="www.google.com";  
+  		});
+*/
+      });
+    </script>
+	
+	<style type="text/css">
+      .pep{ width: 90px; height: 90px; background: blue; z-index: 10; }
+      .droppable{   width: 100px; height: 100px; 
+                    position: absolute; 
+                    border: 5px solid #ccc; 
+                    z-index: -1;
+                  }
+
+      .droppable.m  { top: 50%; left:50%; margin-left: -50px; margin-top: -50px; }
+      .droppable.tr { right:  30px; bottom:  30px; }
+      .droppable.br { top:    30px; right:   30px;}
+      .droppable.bl { top:    30px; left:    30px;}
+      .droppable.tl { bottom: 30px; left:    30px;}
+      .pep-dpa{ border-color: blue; }
+    </style>
+	
+    <style type="text/css">
+      .pep1{ width: 200px;
+    height: 200px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px; background: #77DD77; }
+    </style>
+
+    <style type="text/css">
+      .pep2{  width: 200px;
+    height: 200px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px; background: #3498db; }
+    </style>    
+    
+    <style type="text/css">
+      .pep3{  width: 200px;
+    height: 200px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px; background: #9b59b6; }
+    </style>  
+    
+    <style type="text/css">
+      .pep4{  width: 200px;
+    height: 200px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px; background: #c0392b; }
+    </style>  
+    
+    <style type="text/css">
+      .pep5{  width: 200px;
+    height: 200px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px; background: #FF6961; }
+    </style>  
+    
+  </head>
+
+  <body>
+    <a href="www.google.com"><div class="constrain-to-window pep1">
+	    <div class="link"><a href="www.google.com">Past Projects</a></div></div>
+    </div></a>
+    <div class="constrain-to-window pep2">
+    	<div class="link"><a href="www.google.com">Music</a></div>
+    </div>
+    <div class="constrain-to-window pep3">
+    	<div class="link"><a href="www.google.com">Blog</a></div>
+    </div>
+    <div class="constrain-to-window pep4">
+    	<div class="link"><a href="www.google.com">Photography</a></div>
+    </div>
+    <div class="constrain-to-window pep5">
+    	<div class="link"><a href="www.google.com">About Me</a></div>
+    </div>
+    <div class="droppable m"></div>
+    <div class="droppable tr"></div>
+    <div class="droppable br"></div>
+    <div class="droppable bl"></div>
+    <div class="droppable tl"></div>
+  </body>
+
+</html>
