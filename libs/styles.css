@@ -18,12 +18,14 @@
 .droppable.br{
 	text-align: center;
 	color: white;
+	font-size: 105%;
 }
 
 body {
 	font-family: 'Lato', sans-serif;
 	font-size: 24;
-	background-image: url("../img/boston.png");
+	background-image: url("../img/boston.png") ;
+	background-repeat: no-repeat;
 }
 
 .me {
@@ -34,8 +36,8 @@ body {
 
 .dasme {
 	position: absolute;
-	top: 50px;
-	right: 200px;
+	top: 40px;
+	right: 180px;
 	/* Safari */
 -webkit-transform: rotate(30deg);
 
@@ -50,4 +52,16 @@ body {
 
 /* Internet Explorer */
 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.description {
+    position: absolute;
+	top: 450px;
+	font-size: 250%;
+	color: white;
+}
+
+.small {
+	font-size: 50%;
+	color: white;
 }

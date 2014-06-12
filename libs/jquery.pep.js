@@ -886,7 +886,7 @@
       if ( self.isOverlapping($el, self.$el) ){
         $el.addClass(self.options.droppableActiveClass);
         self.activeDropRegions.push($el);
-        window.location = "http://www.asaphyuan.com/" + website;
+        window.location = "http://www.asaphyuan.com/" + website + ".html";
       } else {
         $el.removeClass(self.options.droppableActiveClass);
       }
